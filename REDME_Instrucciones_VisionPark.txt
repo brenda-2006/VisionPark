@@ -1,0 +1,53 @@
+INSTRUCCIONES PARA EJECUTAR EL SISTEMA VISIONPARK (MODO EXCEL)
+
+Este sistema permite el reconocimiento automático de placas de vehículos, registro de visitantes y control de acceso usando un modelo YOLOv8, OCR con EasyOCR y manejo de datos a través de archivos Excel.
+
+=== REQUISITOS DE INSTALACIÓN ===
+
+1. Python 3.11.1
+2. Instalar las siguientes librerías:
+   pip install ultralytics opencv-python easyocr pandas openpyxl tk
+
+   NOTA: EasyOCR puede requerir instalar también pytorch. Si hay errores, ejecutar:
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+
+=== ESTRUCTURA DE ARCHIVOS EXCEL ===
+
+1. Re_vehiculos.xlsx (en la misma carpeta del proyecto)
+
+   - Hoja: "vehiculos"
+     Columnas: Placa., Nombre., Documento., Marca., Modelo., Color, Apartamento, Fecha de registro., Hora de registro.
+
+   - Hoja: "visitantes"
+     Columnas: Placa., Nombre., Documento., Marca., Apartamento destino., Fecha de registro., Hora de registro.
+
+   - Hoja: "registro"
+     Columnas: Placa., Fecha de ingreso., Hora de ingreso., Nombre., Marca.
+
+2. Autorizados.xlsx
+
+   - Hoja: "autorizados"
+     Columnas: Usuario., Contraseña.
+
+   - Hoja: "registros"
+     Columnas: Usuario., Fecha, Hora.
+
+
+=== RECOMENDACIONES ===
+
+- Ejecutar el script `a6_main_excel.py` para iniciar el sistema.
+- Verifica que la cámara esté conectada y funcione correctamente.
+- Si usas Windows, asegúrate de dar permisos de lectura/escritura a los archivos Excel.
+- Presiona la tecla "q" o usa el botón "Salir del sistema" para cerrar correctamente.
+
+=== PROBLEMAS COMUNES ===
+
+-  Error "openpyxl not found" → Ejecuta: pip install openpyxl
+-  No se detectan placas → Asegúrate de que el modelo YOLO esté bien cargado.
+-  No se abre el Excel → Asegúrate que no esté abierto en otro programa como Excel.
+-  OCR devuelve None → Mejora iluminación y enfoque de la cámara.
+
+=== CREDITOS ===
+Sistema VisionPark desarrollado como proyecto integrador de reconocimiento de placas y gestión de acceso vehicular. Usa inteligencia artificial, OCR y manejo de datos con Excel para una solución de control accesible y adaptable.
+
