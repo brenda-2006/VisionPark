@@ -13,8 +13,15 @@ import sys                          # Para cerrar el sistema completamente
 # Inicializa OCR
 reader = easyocr.Reader(['en'], gpu=False)
 
-# Carga modelo YOLO
+
+#--------------------------------------------- Carga modelo YOLO------------------------------------------------------------#
+#------------------ PARA USAR EN OTRA PC, SE DEBE MODIFICAR LA RUTA DONDE SE ENCUENTRA EL MODELO ENTRENADO------------------#
+
 modelo = YOLO(r"D:\Desktop\IA\Proyecto_final\runs\detect\placas_col\weights\best.pt")
+
+#----------------------------------------------------------------------------------------------------------------------------#
+
+
 
 # Oculta ventana principal
 Tk().withdraw()

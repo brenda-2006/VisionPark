@@ -5,11 +5,31 @@ Este sistema permite el reconocimiento automático de placas de vehículos, regi
 === REQUISITOS DE INSTALACIÓN ===
 
 1. Python 3.11.1
+
 2. Instalar las siguientes librerías:
    pip install ultralytics opencv-python easyocr pandas openpyxl tk
 
    NOTA: EasyOCR puede requerir instalar también pytorch. Si hay errores, ejecutar:
    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+3. Asegúrese que el contenido del proyecto no esté dentro de una carpeta duplicada.
+
+    - Evitar esto:
+    d/Desktop/VisionPark-main/VisionPark-main/……
+
+    - Tener algo así:
+    d/Desktop/VisionPark-main/….
+
+4. En el script "a7_deteccion_excel.py" asegúrese de cambiar la ruta donde se encuentra el modelo entrenado, 
+   pues si no se modifica correctamente, no ejecutará el código.
+  
+   - Ejemplo:
+     modelo = YOLO(r"D: .....ruta donde esta el proyecto.....\runs\detect\placas_col\weights\best.pt")
+
+
+5. Si se tiene el SQLServer local, se puede ejecutar el script "a6_main_sql.py", realizando las previas configuraciones de rutas de acceso.
+
+6. Si se desea ejecutar con los archivos Excel (xlsx) ya existentes, entonces ejecutar el script "a8_main_excel.py" con la configuración del punto 4.
 
 
 === ESTRUCTURA DE ARCHIVOS EXCEL ===
@@ -36,7 +56,7 @@ Este sistema permite el reconocimiento automático de placas de vehículos, regi
 
 === RECOMENDACIONES ===
 
-- Ejecutar el script `a6_main_excel.py` para iniciar el sistema.
+- Ejecutar el script `a8_main_excel.py` para iniciar el sistema.
 - Verifica que la cámara esté conectada y funcione correctamente.
 - Si usas Windows, asegúrate de dar permisos de lectura/escritura a los archivos Excel.
 - Presiona la tecla "q" o usa el botón "Salir del sistema" para cerrar correctamente.
@@ -48,6 +68,6 @@ Este sistema permite el reconocimiento automático de placas de vehículos, regi
 -  No se abre el Excel → Asegúrate que no esté abierto en otro programa como Excel.
 -  OCR devuelve None → Mejora iluminación y enfoque de la cámara.
 
-=== CREDITOS ===
+=== CRÉDITOS ===
 Sistema VisionPark desarrollado como proyecto integrador de reconocimiento de placas y gestión de acceso vehicular. Usa inteligencia artificial, OCR y manejo de datos con Excel para una solución de control accesible y adaptable.
 
