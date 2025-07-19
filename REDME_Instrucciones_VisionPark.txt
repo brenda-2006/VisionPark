@@ -31,6 +31,14 @@ Este sistema permite el reconocimiento automático de placas de vehículos, regi
 
 6. Si se desea ejecutar con los archivos Excel (xlsx) ya existentes, entonces ejecutar el script "a8_main_excel.py" con la configuración del punto 4.
 
+7. Cuando logre ejecutar el programa, le pedira una autenticación de usuario en la cuál deberá ingresar:
+   - Usuario: admin
+   - Contraseña: 0809
+
+   Luego le dará acceso a todo el sistema.
+
+8. Para ver toda la información en la base de datos (Excel) puede ingresar a los archivos .xlsx
+   Podrá visualizarlos en el mismo VS Code o abrir directamente el archivo que lo dirigirá a un Excel.
 
 === ESTRUCTURA DE ARCHIVOS EXCEL ===
 
