@@ -20,8 +20,7 @@ Este sistema permite el reconocimiento automático de placas de vehículos, regi
     - Tener algo así:
     d/Desktop/VisionPark-main/….
 
-4. En el script "a7_deteccion_excel.py" asegúrese de cambiar la ruta donde se encuentra el modelo entrenado, 
-   pues si no se modifica correctamente, no ejecutará el código.
+4. En casi de que la ruta no funcione en tu dispositivo, ingresar al script "a7_deteccion_excel.py" y asegúrese de cambiar la ruta donde      se encuentra el modelo entrenado, pues si no se modifica correctamente, no ejecutará el código.
   
    - Ejemplo:
      modelo = YOLO(r"D: .....ruta donde esta el proyecto.....\runs\detect\placas_col\weights\best.pt")
